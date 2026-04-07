@@ -1,16 +1,17 @@
-import { Link, Outlet } from 'react-router-dom'
+import { Outlet } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const RootLayout = () => {
   return (
-    <>
-    <div className='p-5 h-5 bg-black flex items-center'>
-        <Link   to="/about" className='text-white mr-5'>About</Link>
-        <Link to="/contact" className='text-white'>Contact</Link>
+    <div className="flex min-h-screen flex-col">
+      <Header />
+      <div className="flex-1 pt-20">
+        <Outlet />
+      </div>
+      <Footer />
     </div>
+  );
+};
 
-    <Outlet />
-</>
-  )
-}
-
-export default RootLayout
+export default RootLayout;
